@@ -1,0 +1,92 @@
+version: 2
+ 
+models:
+  - name: fct_bitbucket_monitoring_pull_requests
+    description: "Information about Bitbucket's pull requests."
+    columns:
+      - name: pullrequest_sk
+        description: "The table's primary key."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: repository_fk
+        description: "Foreign key from dim_bitbucket_monitoring_repository."
+
+      - name: author_fk
+        description: "Foreign key from dim_bitbucket_monitoring_author."
+
+      - name: pullrequest_title
+        description: "Title of the pull request."
+
+      - name: pullrequest_description
+        description: "Objective of the pull request."
+
+      - name: pullrequest_type
+        description: "Type of the pull request."
+
+      - name: created_on
+        description: "Date when the pull request was created."
+
+      - name: pullrequest_state
+        description: "Status of the pull request."
+
+      - name: updated_on
+        description: "Date of the last update."
+
+      - name: close_source_branch
+        description: "Information about whether the source branch associated with the pull request was closed after the pull request was successfully merged."
+
+      - name: pullrequest_id
+        description: "Identification of the pull request."
+
+      - name: comment_count
+        description: "Number of comments in the pull request."
+
+      - name: task_count
+        description: "Contains the number of tasks associated with a specific pull request."
+
+      - name: commit_count
+        description: "Number of commits in the pull request."
+
+      - name: merged_at
+        description: "Date when the pull request was merged."
+
+      - name: files_changed
+        description: "Number of files changed in the pull request."
+
+      - name: lines_added
+        description: "Number of lines added in the pull request."
+
+      - name: lines_deleted
+        description: "Number of lines deleted in the pull request."
+
+      - name: destination_branch_name
+        description: "Name of the destination branch."
+
+      - name: destination_commit_hash
+        description: "Information about the target commit the pull request is directed to."
+
+      - name: destination_commit_type
+        description: "Type of the target commit the pull request is directed to."
+
+      - name: destination_repository_name
+        description: "Information about the target repository the pull request is directed to."
+
+      - name: destination_repository_uuid
+        description: "UUID (Bitbucket identification) of the target repository the pull request is directed to."
+
+      - name: source_branch_name
+        description: "Name of the source branch."
+
+      - name: source_commit_hash
+        description: "Name of the source commit."
+
+      - name: source_commit_type
+        description: "Type of the source commit."
+
+      - name: closed_by_displayname
+        description: "Display name of the user who closed the pull request."
+
+      - name: closed_by_uuid
+        description: "UUID (Bitbucket identification) of the user who closed the pull request."

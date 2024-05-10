@@ -1,0 +1,23 @@
+version: 2
+ 
+models:
+  - name: dim_bitbucket_monitoring_repository
+    description: "Information about Bitbucket's repositories."
+    columns:
+      - name: repository_sk
+        description: "The primary key of the table."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: repository_uuid
+        description: "Identification of the repository."
+
+      - name: repository_fullname
+        description: "Complete name of the repository"
+     
+      - name: repository_name
+        description: "Short name of the repository"
+     
+      - name: repository_type
+        description: "Type of the repository"

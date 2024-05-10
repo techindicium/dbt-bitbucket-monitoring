@@ -1,0 +1,45 @@
+version: 2
+ 
+models:
+  - name: fct_bitbucket_monitoring_branches
+    description: "Information about Bitbucket's branches."
+    columns:
+      - name: repository_fk
+        description: "Foreign key from dim_bitbucket_monitoring_repository."
+
+      - name: author_fk
+        description: "Foreign key from dim_bitbucket_monitoring_author."
+
+      - name: branch_name
+        description: "Name of the branch."
+
+      - name: branch_type
+        description: "Type of the branch."
+
+      - name: target_author_displayname
+        description: "Display name of the user that created the branch."
+
+      - name: target_author_uuid
+        description: "UUID (Bitbucket identification) of the user that created the branch."
+
+      - name: target_date
+        description: "The date when the branch were created."
+
+      - name: target_hash
+        description: "Identification of the commit that created the branch."
+
+      - name: target_message
+        description: "Message related to the commit that created the branch."
+
+      - name: target_parents_hash
+        description: "Identification of the parent commits of the commit that created the branch."
+
+      - name: target_repository_name
+        description: "Name of the repository where the branch is."
+
+      - name: target_repository_uuid
+        description: "UUID (Bitbucket identification) of the repository where the branch is."
+
+      - name: target_type
+        description: "Indicates about what type of target the information are."
+     

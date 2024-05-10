@@ -1,0 +1,44 @@
+version: 2
+ 
+models:
+  - name: fct_bitbucket_monitoring_commits
+    description: "Information about Bitbucket's branches."
+    columns:
+      - name: repository_fk
+        description: "Foreign key from dim_bitbucket_monitoring_repository."
+
+      - name: author_fk
+        description: "Foreign key from dim_bitbucket_monitoring_author."
+
+      - name: commit_hash
+        description: "Identification of the commit."
+
+      - name: commit_date
+        description: "Date of the commit."
+
+      - name: commit_message
+        description: "Description of the commit."
+
+      - name: commit_type
+        description: "Type of the commit."
+
+      - name: repository_name
+        description: "Name of the repository where the commit was made."
+
+      - name: repository_uuid
+        description: "UUID (Bitbucket identification) of the repository where the commit was made."
+
+      - name: author_type
+        description: "Type of the author."
+
+      - name: author_displayname
+        description: "User's display name"
+
+      - name: author_uuid
+        description: "User's UUID (Bitbucket identification)."
+
+      - name: parents_hash
+        description: "Identification of the parent commits."
+
+      - name: parents_type
+        description: "Type of the parent commits."

@@ -1,0 +1,26 @@
+version: 2
+ 
+models:
+  - name: dim_bitbucket_monitoring_author
+    description: "Information about Bitbucket's users."
+    columns:
+      - name: author_sk
+        description: "The primary key of the table."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: author_uuid
+        description: "Identification of the user."
+
+      - name: author_type
+        description: "Users's type"
+     
+      - name: author_accountid
+        description: "Id of the user's Bitbucket account"
+     
+      - name: author_displayname
+        description: "User's display name"
+     
+      - name: author_nickname
+        description: "User's nickname" 

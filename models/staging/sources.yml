@@ -1,0 +1,198 @@
+version: 2
+
+sources:
+
+  - name: raw_bitbucket
+    database: internal_products
+    schema: raw_bitbucket
+    description: "Data source with metadata extracted from Bitbucket."
+    tables:
+      - name: branches
+        description: "Data about Bitbucket branches."
+        columns:
+          - name: name
+            description: "Name of the branch."
+            
+          - name: links
+            description: "Url of the branch."
+
+          - name: type
+            description: "Type of the branch."
+
+          - name: target
+            description: "Column with data in json format. Contains details about the branch, like the author, date, hash and repository of the branch."
+
+      - name: commits
+        description: "Data about the commits registered in Bitbucket."
+        columns:
+          - name: author
+            description: "Column in json format. Contains information about the user that made the commit."
+
+          - name: date
+            description: "Date of the commit."
+
+          - name: hash
+            description: "Identification of the commit."
+
+          - name: type
+            description: "Type of the commit."
+
+          - name: message
+            description: "Description of the commit."
+
+          - name: repository
+            description: "Column in json format. Contains information about the repository where the commit was made."
+            
+          - name: parents
+            description: "Information related to the commit."
+
+      - name: pipeline_steps
+        description: "This table contains data about each step of a pipeline."
+        columns:
+          - name: completedon
+            description: "Timestamp when the step was completed."
+
+          - name: uuid
+            description: "Identification of the step."
+
+          - name: startedon
+            description: "Timestamp when the step started."
+
+          - name: type
+            description: "Type of the step."
+
+          - name: name
+            description: "Name of the pipeline step."
+
+          - name: runnumber
+            description: "Number of any executions of the pipeline."
+
+          - name: maxtime
+            description: "Maximum step time."
+
+          - name: buildsecondsused
+            description: "Total duration of the build."
+            
+          - name: durationinseconds
+            description: "Total duration of the runs."
+            
+          - name: pipeline
+            description: "Information about the related pipeline."
+            
+          - name: image
+            description: "Information about the image creatted."
+            
+          - name: state
+            description: "Information about the status of the pipeline step."
+
+      - name: pipelines
+        description: "This table contains general information about the pipelines."
+        columns:            
+          - name: type
+            description: "Type of the pipeline."
+            
+          - name: uuid
+            description: "Pipeline identification."
+            
+          - name: buildnumber
+            description: "Number of compilation executions of the pipeline."
+            
+          - name: createdon
+            description: "Date when the pipeline was created."
+            
+          - name: completedon
+            description: "Date when the pipeline was completed."
+            
+          - name: runnumber
+            description: "Number of any executions of the pipeline."
+            
+          - name: durationinseconds
+            description: "Total duration of the runs."
+            
+          - name: buildsecondsused
+            description: "Total duration of the build."
+            
+          - name: firstsuccessfull
+            description: "Shows whether the pipeline was executed successfully in the first run."
+            
+          - name: expired
+            description: "Shows if the pipeline expired."
+            
+          - name: hasvariables
+            description: "Shows if the pipeline has variables."
+            
+          - name: repository
+            description: "Information of the repository where the pipeline is running."
+            
+          - name: state
+            description: "Information about the current status."
+            
+          - name: creator
+            description: "Information about the user who created the pipeline."
+            
+          - name: target
+            description: "Information about the target commit."
+
+      - name: pull_request_activities
+        description: "This table contains information about pull requests approval processes."
+        columns:            
+          - name: approval
+            description: "Information about the process of the pull request approval."
+            
+          - name: update
+            description: "Information about the pull requests updates."
+            
+          - name: pullrequest
+            description: "Information about the pull request."
+            
+          - name: pullrequestupdatedon
+            description: "Date when the pull request was updated."
+            
+      - name: pull_requests
+        description: "This table contains general information about pull requests."
+        columns:    
+          - name: description
+            description: "Objective of the pull request."
+            
+          - name: tittle
+            description: "Title of the pull request."
+            
+          - name: type
+            description: "Type of the pull request."
+            
+          - name: createdon
+            description: "Date when the pull request was created."
+            
+          - name: state
+            description: "Status of the pull request."
+            
+          - name: updatedon
+            description: "Date of the last update."
+            
+          - name: closesourcebranch
+            description: "Information about whether the source branch associated with the pull request was closed after the pull request was successfully merged."
+            
+          - name: id
+            description: "Identification of the pull request."
+            
+          - name: commentcount
+            description: "Number of comments in the pull request."
+            
+          - name: taskcount
+            description: "Contains the number of tasks associated with a specific pull request."
+            
+          - name: calculatedactivity
+            description: "Information about files and lines."
+            
+          - name: destination
+            description: "Information about the target the pull request is directed to."
+            
+          - name: source
+            description: "Information about the source of the pull request."
+            
+          - name: author
+            description: "Information about the user who created the pull request."
+            
+          - name: closedby
+            description: "Information about the user who closed the pull request."
+          

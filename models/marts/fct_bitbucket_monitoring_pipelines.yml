@@ -1,0 +1,77 @@
+version: 2
+ 
+models:
+  - name: fct_bitbucket_monitoring_pipelines
+    description: "Information about Bitbucket's pipelines."
+    columns:
+      - name: pipeline_sk
+        description: "The table's primary key."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: repository_fk
+        description: "Foreign key from dim_bitbucket_monitoring_repository."
+
+      - name: author_fk
+        description: "Foreign key from dim_bitbucket_monitoring_author."
+
+      - name: pipeline_type
+        description: "Type of the pipeline."
+
+      - name: pipeline_uuid
+        description: "Pipeline identification."
+
+      - name: pipeline_buildnumber
+        description: "Number of compilation executions of the pipeline."
+
+      - name: created_on
+        description: "Date when the pipeline was created."
+
+      - name: completed_on
+        description: "Date when the pipeline was completed."
+
+      - name: pipeline_runnumber
+        description: "Number of any executions of the pipeline."
+
+      - name: duration_in_seconds
+        description: "Total duration of the runs."
+
+      - name: build_in_seconds
+        description: "Total duration of the build."
+
+      - name: first_successfull
+        description: "Shows whether the pipeline was executed successfully in the first run."
+
+      - name: expired
+        description: "Shows if the pipeline expired."
+
+      - name: has_variables
+        description: "Shows if the pipeline has variables."
+
+      - name: repository_name
+        description: "Name of the repository where the pipeline is running."
+
+      - name: repository_uuid
+        description: "UUID (Bitbucket identification) of the repository."
+
+      - name: state_name
+        description: "Description of the current status."
+
+      - name: state_stage_name
+        description: "Description of the current stage when the status is IN PROGRESS. For any other status, the stage will be null."
+
+      - name: target_refname
+        description: "Information about the reference of the target."
+
+      - name: target_commit_type
+        description: "Type of the target commit."
+
+      - name: target_commit_hash
+        description: "Identification of the target commit."
+
+      - name: creator_uuid
+        description: "Creator's UUID (Bitbucket identification)."
+
+      - name: creator_displayname
+        description: "Creator's display name"
